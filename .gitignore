@@ -3,4 +3,3 @@
 *.iml
 build
 kotlin-js-store
-.env

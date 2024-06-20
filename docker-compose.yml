@@ -9,6 +9,8 @@ services:
   hanoi_frontend:
     build:
       context: .
+      #args:
+      #- BETTERSTACK_TOKEN
       dockerfile: hanoi-frontend/docker/Dockerfile
     ports:
       - "8080:80"
@@ -50,13 +52,16 @@ services:
     networks:
       - backend
 
-
- # adminer:
- #   image: adminer
- #   hostname: adminer
-#    restart: always
- #   ports:
- #   - "8082:8080"
- #   networks:
- #     - frontend
- #     - backend
+  hanoi_vector:
+    build:
+      context: .
+      args:
+      - BETTERSTACK_TOKEN
+      dockerfile: hanoi-vector/Dockerfile
+    container_name: hanoi_vector
+    hostname: hanoi_vector
+    depends_on:
+      - hanoi_frontend
+    networks:
+      - frontend
+      - backend
