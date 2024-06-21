@@ -9,7 +9,6 @@ RUN chmod +x /install-vector.sh
 RUN /install-vector.sh $BETTERSTACK_TOKEN
 RUN sed -i 's|http://127.0.0.1/server-status?auto|http://hanoi_frontend/server-status?auto|g' /etc/vector/vector.yaml
 
-#CMD ["/usr/bin/vector"]
 CMD ["/usr/bin/vector"]
 
 
