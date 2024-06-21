@@ -1,5 +1,0 @@
-sources:
-  hanoi_frontend:
-    type: apache_metrics
-    endpoints:
-      - http://hanoi_frontend:8080/server-status/?auto
