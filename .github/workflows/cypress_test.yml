@@ -78,7 +78,8 @@ jobs:
     # Start the application with Docker Compose
     - name: Start Docker Compose
       run: |
-        docker-compose up -d --build --build-arg="BETTERSTACK_TOKEN=${{ secrets.JWT_SECRET }}"
+        docker-compose build --build-arg="BETTERSTACK_TOKEN=${{ secrets.JWT_SECRET }}"
+        docker-compose up -d
     
     # Run the Cypress tests
     - name: Run Cypress tests 
